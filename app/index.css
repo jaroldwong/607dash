@@ -37,3 +37,16 @@ li {
 .active {
   font-weight: bold;
 }
+
+.selection-container {
+  width: 100%;
+  display: flex;
+}
+
+.selection-box {
+  flex: 1;
+  background-color: rgba(0,0,0,0.3);
+  padding: 2em;
+  margin: 10px;
+  text-align: center;
+}

@@ -12,7 +12,7 @@ function Nav () {
       </li>
       <li>
         <NavLink activeClassName='active' to='/rooms'>
-          Available Rooms
+          Room Availability
         </NavLink>
       </li>
       <li>
