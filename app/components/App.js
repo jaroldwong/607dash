@@ -6,8 +6,8 @@ var Switch = ReactRouter.Switch;
 var Nav = require('./Nav');
 var Home = require('./Home');
 var Rooms = require('./Rooms');
-var Maintenance = require('./Maintenace');
-var Lockup = require('Lockup');
+var Maintenance = require('./Maintenance');
+var Lockup = require('./Lockup');
 
 class App extends React.Component {
   render() {
