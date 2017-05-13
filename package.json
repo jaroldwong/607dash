@@ -4,7 +4,10 @@
   "description": "Dashboard for building management",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --open"
+    "start": "webpack-dev-server --host localhost --port 3000 --open",
+    "build": "NODE_ENV='production' webpack -p",
+    "firebase-init": "firebase login && firebase init",
+    "deploy": "npm run build && firebase deploy"
   },
   "author": "Jarold Wong",
   "license": "MIT",
