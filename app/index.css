@@ -50,3 +50,15 @@ li {
   margin: 10px;
   text-align: center;
 }
+
+.maintenance-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.maintenance-item {
+  background-color: silver;
+  padding: 1em;
+  margin: 10px;
+}
