@@ -62,3 +62,8 @@ li {
   padding: 1em;
   margin: 10px;
 }
+
+input {
+  display: block;
+  margin: 10px;
+}
