@@ -1,33 +1,33 @@
-var React = require('react');
-var ReactRouter = require('react-router-dom');
-var Router = ReactRouter.BrowserRouter;
-var Route = ReactRouter.Route;
-var Switch = ReactRouter.Switch;
-var Nav = require('./Nav');
-var Home = require('./Home');
-var Rooms = require('./Rooms');
-var Maintenance = require('./Maintenance');
-var Lockup = require('./Lockup');
+import React, { Component } from 'react';
+import { BrowserRouter, Route } from 'react-router-dom';
 
-class App extends React.Component {
+import Nav from './Nav';
+import Home from './Home';
+import Rooms from './Rooms';
+import Maintenance from './Maintenance';
+import Lockup from './Lockup';
+
+class App extends Component {
   render() {
     return (
-      <Router>
-        <div className='container'>
+      <BrowserRouter>
+        <div className="container">
           <Nav />
           <Switch>
-            <Route exact path='/' component={Home} />
-            <Route path='/rooms' component={Rooms} />
-            <Route path='/maintenance' component={Maintenance} />
-            <Route path='/lockup' component={Lockup} />
-            <Route render={function() {
-              return <p>Not Found</p>
-            }} />
+            <Route exact path="/" component={Home} />
+            <Route path="/rooms" component={Rooms} />
+            <Route path="/maintenance" component={Maintenance} />
+            <Route path="/lockup" component={Lockup} />
+            <Route
+              render={function() {
+                return <p>Not Found</p>;
+              }}
+            />
           </Switch>
         </div>
-      </Router>
-    )
+      </BrowserRouter>
+    );
   }
 }
 
-module.exports = App;
+export default App;

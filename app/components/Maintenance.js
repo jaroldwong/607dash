@@ -1,21 +1,21 @@
-var React = require('react')
+import React, { Component } from 'react';
 
-class Maintenance extends React.Component {
+class Maintenance extends Component {
   constructor() {
     super();
     this.state = {
       issues: [
         {
-          name: "Martin Loekito",
-          issue: "Flickering light in the staff suite",
-          status: "New",
+          name: 'Martin Loekito',
+          issue: 'Flickering light in the staff suite',
+          status: 'New'
         },
         {
-          name: "Jun Hwang",
-          issue: "Leaking soap dispenser",
-          status: "In progress",
+          name: 'Jun Hwang',
+          issue: 'Leaking soap dispenser',
+          status: 'In progress'
         }
-      ],
+      ]
     };
   }
 
@@ -34,7 +34,7 @@ class Maintenance extends React.Component {
         <MaintenanceInput onAdd={this.onAdd.bind(this)} />
         <MaintenanceList issues={this.state.issues} />
       </div>
-    )
+    );
   }
 }
 
@@ -42,17 +42,17 @@ class MaintenanceList extends React.Component {
   render() {
     return (
       <ul className="maintenance-list">
-        {this.props.issues.map(function (issue, index) {
+        {this.props.issues.map(function(issue, index) {
           return (
             <li className="maintenance-item">
               <p>Status: {issue.status}</p>
               <p>Issue: {issue.issue}</p>
               <p>Submitted by: {issue.name}</p>
             </li>
-          )
+          );
         })}
       </ul>
-    )
+    );
   }
 }
 
@@ -64,7 +64,7 @@ class MaintenanceInput extends React.Component {
         <input type="text" placeholder="Issue" ref="newIssue" required />
         <input type="submit" value="Submit" />
       </form>
-    )
+    );
   }
 
   handleSubmit(e) {
@@ -73,14 +73,14 @@ class MaintenanceInput extends React.Component {
     var newIssue = {
       name: this.refs.newName.value,
       issue: this.refs.newIssue.value,
-      status: "New"
-    }
+      status: 'New'
+    };
 
-    this.refs.newName.value = "";
-    this.refs.newIssue.value = "";
+    this.refs.newName.value = '';
+    this.refs.newIssue.value = '';
 
     this.props.onAdd(newIssue);
   }
 }
 
-module.exports = Maintenance;
+export default Maintenance;

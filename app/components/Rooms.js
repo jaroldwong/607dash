@@ -1,13 +1,9 @@
-var React = require('react')
+import React, { Component } from 'react';
 
-class Rooms extends React.Component {
-    render() {
-        return (
-            <div>
-              Rooms
-            </div>
-        )
-    }
+class Rooms extends Component {
+  render() {
+    return <div>Rooms</div>;
+  }
 }
 
-module.exports = Rooms;
+export default Rooms;

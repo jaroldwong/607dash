@@ -1,13 +1,9 @@
-var React = require('react')
+import React, { Component } from 'react';
 
-class Lockup extends React.Component {
-    render() {
-        return (
-            <div>
-              Lockup
-            </div>
-        )
-    }
+class Lockup extends Component {
+  render() {
+    return <div>Lockup</div>;
+  }
 }
 
-module.exports = Lockup;
+export default Lockup;
