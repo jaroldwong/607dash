@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Nav from './Nav';
 import Home from './Home';
 import Rooms from './Rooms';
 import Maintenance from './Maintenance';
 import Lockup from './Lockup';
+
+const NotFound = () => <p>404 Not Found</p>;
 
 class App extends Component {
   render() {
@@ -18,10 +20,7 @@ class App extends Component {
             <Route path="/rooms" component={Rooms} />
             <Route path="/maintenance" component={Maintenance} />
             <Route path="/lockup" component={Lockup} />
-            <Route
-              render={function() {
-                return <p>Not Found</p>;
-              }}
+            <Route component={NotFound} />
             />
           </Switch>
         </div>
