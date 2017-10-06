@@ -3,20 +3,6 @@ import React, { Component } from 'react';
 class Maintenance extends Component {
   constructor() {
     super();
-    this.state = {
-      issues: [
-        {
-          name: 'Martin Loekito',
-          issue: 'Flickering light in the staff suite',
-          status: 'New'
-        },
-        {
-          name: 'Jun Hwang',
-          issue: 'Leaking soap dispenser',
-          status: 'In progress'
-        }
-      ]
-    };
   }
 
   onAdd(newIssue) {
