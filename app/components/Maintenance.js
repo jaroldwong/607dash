@@ -1,24 +1,28 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class Maintenance extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      requests: props.requests,
+    };
   }
 
-  onAdd(newIssue) {
-    var updatedIssues = this.state.issues;
-    updatedIssues.push(newIssue);
-    this.setState({
-      issues: updatedIssues
-    });
-  }
+  // onAdd(newIssue) {
+  //   var updatedIssues = this.state.issues;
+  //   updatedIssues.push(newIssue);
+  //   this.setState({
+  //     issues: updatedIssues
+  //   });
+  // }
 
   render() {
     return (
       <div>
         <h2>Issues</h2>
-        <MaintenanceInput onAdd={this.onAdd.bind(this)} />
-        <MaintenanceList issues={this.state.issues} />
+        <MaintenanceList requests={this.state.requests} />
       </div>
     );
   }
@@ -28,12 +32,12 @@ class MaintenanceList extends React.Component {
   render() {
     return (
       <ul className="maintenance-list">
-        {this.props.issues.map(function(issue, index) {
+        {this.props.requests.map((request, index) => {
           return (
-            <li className="maintenance-item">
-              <p>Status: {issue.status}</p>
-              <p>Issue: {issue.issue}</p>
-              <p>Submitted by: {issue.name}</p>
+            <li className="maintenance-item" key={request.issue}>
+              <p>Status: {request.status}</p>
+              <p>Issue: {request.issue}</p>
+              <p>Submitted by: {request.name}</p>
             </li>
           );
         })}
@@ -69,4 +73,10 @@ class MaintenanceInput extends React.Component {
   }
 }
 
-export default Maintenance;
+const mapStateToProps = (state) => {
+  return {
+    requests: state.requests
+  }
+}
+
+export default connect(mapStateToProps)(Maintenance);
